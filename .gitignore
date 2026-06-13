@@ -1,1 +1,36 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Environment variables / secrets
 .env
+.env.*
+!.env.example
+
+# Node / Next.js
+node_modules/
+.next/
+dist/
+out/
+
+# VS Code
+.vscode/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# OS files
+.DS_Store
+Thumbs.db
