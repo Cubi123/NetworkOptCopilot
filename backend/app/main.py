@@ -1,21 +1,8 @@
 from fastapi import FastAPI, HTTPException
-from pydantic_settings import BaseSettings, SettingsConfigDict
-from sqlalchemy import create_engine, text
+from sqlalchemy import text
 from sqlalchemy.exc import SQLAlchemyError
-
-
-class Settings(BaseSettings):
-    DATABASE_URL: str = ""
-    ENVIRONMENT: str = "development"
-    model_config = SettingsConfigDict(env_file=".env")
-    
-
-settings = Settings()
-
-engine = create_engine(
-    settings.DATABASE_URL,
-    pool_pre_ping=True,
-)
+from app.core.config import settings
+from app.db.session import engine
 
 app = FastAPI(title="Network Optimizer", version="1.0.0")
 
